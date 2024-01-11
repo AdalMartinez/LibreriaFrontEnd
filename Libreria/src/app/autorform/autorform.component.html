@@ -1,0 +1,43 @@
+<div class="mt-3"></div>
+<div class="container">
+  <div class="card border-info mb-3">
+    <div class="card-header text-primary">
+      <h1 class="text-center">
+        {{ titulo }}
+      </h1>
+    </div>
+    <div class="card-body text-primary table-responsive">
+      <form>
+        <div class="mb-3">
+          <label for="nombre">Nombre del Autor</label>
+          <input
+            type="text"
+            class="form-control"
+            name="nombre"
+            [(ngModel)]="autor.nombre"
+          />
+        </div>
+
+        <div class="mb-3">
+          <button
+            class="btn btn-outline-success form-control"
+            type="button"
+            (click)="registrarAutor()"
+            *ngIf="!asistente.idAsistente; else elseBlock"
+          >
+            Registrar Asistente
+          </button>
+          <ng-template #elseBlock>
+            <button
+              class="btn btn-outline-primary form-control"
+              type="button"
+              (click)="actualizarAutor()"
+            >
+              Actualizar Asistente
+            </button>
+          </ng-template>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
