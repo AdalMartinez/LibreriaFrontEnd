@@ -1,17 +1,33 @@
-<div class="container mb-3">
-    <nav class="navbar navbar-expand-lg">
-        <div class="container-fluid">
-            <div class="topnav">
-                <button mat-button [matMenuTriggerFor]="menu">Menu</button>
-                <mat-menu #menu="matMenu">
-                    <button mat-menu-item>Item 1</button>
-                    <button mat-menu-item>Item 2</button>
-                </mat-menu>
-                <a href="#news">Categorias</a>
-                <a href="#contact">Libros</a>
-                <a href="#about">Prestamo</a>
-                <a href="#about">Usuarios</a>
-            </div>
-        </div>
-    </nav>
-</div>
+<mat-toolbar color="primary">
+    <button mat-button [matMenuTriggerFor]="autores">Autores</button>
+    <mat-menu #autores="matMenu">
+        <button mat-menu-item (click)="consultarAutores()">Ver autores</button>
+        <button mat-menu-item (click)="agregarAutores()">Agregar autor</button>
+    </mat-menu>
+    <button mat-button [matMenuTriggerFor]="categorias">Categorias</button>
+    <mat-menu #categorias="matMenu">
+        <button mat-menu-item (click)="consultarCategorias()">Ver categorias</button>
+        <button mat-menu-item (click)="agregarCategorias()">Agregar categoria</button>
+    </mat-menu>
+
+    <button mat-button [matMenuTriggerFor]="usuarios">Usuarios</button>
+    <mat-menu #usuarios="matMenu">
+        <button mat-menu-item>Item 1</button>
+        <button mat-menu-item>Item 2</button>
+    </mat-menu>
+    <button mat-button [matMenuTriggerFor]="libros">Libros</button>
+    <mat-menu #libros="matMenu">
+        <button mat-menu-item>Item 1</button>
+        <button mat-menu-item>Item 2</button>
+    </mat-menu>
+    <button mat-button [matMenuTriggerFor]="prestamos">Prestamos</button>
+    <mat-menu #prestamos="matMenu">
+        <button mat-menu-item>Item 1</button>
+        <button mat-menu-item>Item 2</button>
+    </mat-menu>
+    <button mat-button [matMenuTriggerFor]="multas">Multas</button>
+    <mat-menu #multas="matMenu">
+        <button mat-menu-item>Item 1</button>
+        <button mat-menu-item>Item 2</button>
+    </mat-menu>
+</mat-toolbar>

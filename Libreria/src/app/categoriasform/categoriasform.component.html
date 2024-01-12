@@ -1,1 +1,21 @@
-<p>categoriasform works!</p>
+<section fxLayoutAlign="center">
+    <mat-card fxLayoutAling="center center" fxLayout="column" fxLayoutGap="10px">
+        <div class="five">
+            <h1>Formulario Categorias
+            </h1>
+        </div>
+        <mat-form-field>
+            <mat-label>Ingrese el nombre de la categoria</mat-label>
+            <input matInput placeholder="Nombre categoria" name="nombreCategoria" [(ngModel)]="categoria.nombreCategoria" required />
+            <mat-error>Debe ingresar un nombre</mat-error>
+        </mat-form-field>
+        <button mat-raised-button color="primary" (click)="registrarCategoria()"
+            *ngIf="!categoria.idCategoria; else elseBlock">Enviar</button>
+        <ng-template #elseBlock>
+            <button mat-raised-button color="primary" (click)="actualizarCategoria()">
+                Actualizar Categoria
+            </button>
+        </ng-template>
+
+    </mat-card>
+</section>

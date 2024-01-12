@@ -9,7 +9,7 @@ import { Autor } from '../model/Autor';
 })
 export class AutorService {
   private urlEndPoint: string =
-    'http://localhost:8080/apiAutores/autores';
+    'http://localhost:8080/apiBiblioteca/autores';
   private httpHeaders = new HttpHeaders({ ContentType: 'application/json' });
   constructor(private http: HttpClient) {}
 
@@ -17,6 +17,7 @@ export class AutorService {
     return this.http
       .get(this.urlEndPoint)
       .pipe(map((response) => response as Autor[]));
+      
   }
 
   crearAutor(autor: Autor): Observable<Autor> {

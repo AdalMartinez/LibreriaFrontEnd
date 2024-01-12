@@ -3,7 +3,7 @@ import { Autor } from "./Autor";
 export class Libro {
     idLibro: number = 0;
     tituloLibro: string = '';
-    añoPublicacion: string = '';
+    anoPublicacion: string = '';
     editorial: string = '';
     ejemplaresDisponibles: number = 0;
     totalEjemplares: number = 0;

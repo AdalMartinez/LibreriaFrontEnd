@@ -1,1 +1,38 @@
-<p>autores works!</p>
+<div class="mt-3"></div>
+<div class="container border-primary">
+  <div class="card text-center">
+    <div class="card-header text-primary text-center">
+      <h1 class="card-header">
+        {{ titulo }}
+      </h1>
+    </div>
+    <div class="card-body text-primary">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <td>Id de Autor</td>
+            <td>Nombre de Autor</td>
+            <td>Eliminar Autor</td>
+            <td>Actualizar Autor</td>
+          </tr>
+        </thead>
+        <tbody>
+        @for(item of listaDeAutores; track item.idAutor) {
+            <tr>
+                <td>{{item.idAutor}}</td>
+                <td>{{item.nombreAutor}}</td>
+                <td>
+                  <a class="btn btn-outline-danger" (click)="deleteAutor(item.idAutor)">
+                    Eliminar
+                  </a>
+                </td>
+                <td>
+                  <a class="btn btn-outline-success" (click)="actualizarAutor(item.idAutor)"> Actualizar </a>
+                </td>    
+            </tr>
+        }
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

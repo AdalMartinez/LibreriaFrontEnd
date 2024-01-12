@@ -25,9 +25,11 @@ export class AutorformComponent implements OnInit{
         .leerAutor(id)
         .subscribe((elAutor) => (this.autor = elAutor));
     });
+
+
   }
 
-  registrarAsistente(): void {
+  registrarAutor(): void {
     this.autorService
       .crearAutor(this.autor)
       .subscribe((elAsistente) => {
@@ -40,7 +42,7 @@ export class AutorformComponent implements OnInit{
     );
   }
 
-  actualizarAsistente(): void {
+  actualizarAutor(): void {
     this.autorService
       .actualizarAutor(this.autor)
       .subscribe((elAutor) => {

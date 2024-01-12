@@ -1,1 +1,38 @@
-<p>categorias works!</p>
+<div class="mt-3"></div>
+<div class="container border-primary">
+  <div class="card text-center">
+    <div class="card-header text-primary text-center">
+      <h1 class="card-header">
+        {{ titulo }}
+      </h1>
+    </div>
+    <div class="card-body text-primary">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <td>Id de Categoria</td>
+            <td>Nombre de Categoria</td>
+            <td>Eliminar Categoria</td>
+            <td>Actualizar Categoria</td>
+          </tr>
+        </thead>
+        <tbody>
+        @for(item of listaDeCategorias; track item.idCategoria) {
+            <tr>
+                <td>{{item.idCategoria}}</td>
+                <td>{{item.nombreCategoria}}</td>
+                <td>
+                  <a class="btn btn-outline-danger" (click)="deleteCategoria(item.idCategoria)">
+                    Eliminar
+                  </a>
+                </td>
+                <td>
+                  <a class="btn btn-outline-success" (click)="actualizarCategoria(item.idCategoria)"> Actualizar </a>
+                </td>    
+            </tr>
+        }
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
