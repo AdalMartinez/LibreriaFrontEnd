@@ -1,1 +1,46 @@
-<p>usuarios works!</p>
+<div class="mt-3"></div>
+<div class="container border-primary">
+  <div class="card text-center">
+    <div class="card-header text-primary text-center">
+      <h1 class="card-header">
+        {{ titulo }}
+      </h1>
+    </div>
+    <div class="card-body text-primary">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <td>Id de Usuario</td>
+            <td>Nombre de Usuario</td>
+            <td>Direccion de Usuario</td>
+            <td>Telefono de Usuario</td>
+            <td>Correo de Usuario</td>
+            <td>Fecha Registro de Usuario</td>
+            <td>Eliminar Usuario</td>
+            <td>Actualizar Usuario</td>
+          </tr>
+        </thead>
+        <tbody>
+        @for(item of listaDeUsuarios; track item.idUsuario) {
+            <tr>
+                <td>{{item.idUsuario}}</td>
+                <td>{{item.nombreUsuario}}</td>
+                <td>{{item.direccion}}</td>
+                <td>{{item.telefono}}</td>
+                <td>{{item.correo}}</td>
+                <td>{{item.fechaRegistro}}</td>
+                <td>
+                  <a class="btn btn-outline-danger" (click)="deleteUsuario(item.idUsuario)">
+                    Eliminar
+                  </a>
+                </td>
+                <td>
+                  <a class="btn btn-outline-success" (click)="actualizarUsuario(item.idUsuario)"> Actualizar </a>
+                </td>    
+            </tr>
+        }
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

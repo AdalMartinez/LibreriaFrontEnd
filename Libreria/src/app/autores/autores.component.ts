@@ -11,7 +11,7 @@ import Swal from 'sweetalert2';
   styleUrl: './autores.component.css',
 })
 export class AutoresComponent implements OnInit{
-  titulo: string = 'Listado de Asistentes';
+  titulo: string = 'Listado de Autores';
   listaDeAutores: Autor[] = [];
   constructor(
     private autorService: AutorService,
@@ -48,11 +48,7 @@ export class AutoresComponent implements OnInit{
         this.autorService.eliminarAutor(id).subscribe();
         window.location.reload();
       }
-    });
-    
+    }); 
   }
 
- 
-  
-  
 }

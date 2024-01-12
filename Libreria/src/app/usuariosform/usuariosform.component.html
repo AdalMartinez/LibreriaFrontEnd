@@ -1,1 +1,38 @@
-<p>usuariosform works!</p>
+<section fxLayoutAlign="center">
+    <mat-card fxLayoutAling="center center" fxLayout="column" fxLayoutGap="10px">
+        <div class="five">
+            <h1>Formulario Usuario
+            </h1>
+        </div>
+
+
+        <mat-form-field>
+            <mat-label>Ingrese el nombre usuario</mat-label>
+            <input matInput placeholder="Nombre" name="nombreUsuario" [(ngModel)]="usuario.nombreUsuario" required />
+            <mat-error>Debe ingresar un nombre</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Ingrese la direccion</mat-label>
+            <input matInput placeholder="Direccion" name="direccion" [(ngModel)]="usuario.direccion" required />
+            <mat-error>Debe ingresar una direccion</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Ingrese el numero de telefono</mat-label>
+            <input matInput placeholder="Telefono" name="telefono" [(ngModel)]="usuario.telefono" required />
+            <mat-error>Debe ingresar un telefono</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Ingrese el correo</mat-label>
+            <input matInput placeholder="Correo" name="correo" [(ngModel)]="usuario.correo" required />
+            <mat-error>Debe ingresar un nombre</mat-error>
+        </mat-form-field>
+        <button mat-raised-button color="primary" (click)="registrarUsuario()"
+            *ngIf="!usuario.idUsuario; else elseBlock">Enviar</button>
+        <ng-template #elseBlock>
+            <button mat-raised-button color="primary" (click)="actualizarUsuario()">
+                Actualizar Usuario
+            </button>
+        </ng-template>
+
+    </mat-card>
+</section>

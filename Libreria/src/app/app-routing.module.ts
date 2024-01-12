@@ -5,6 +5,8 @@ import { AutorformComponent } from './autorform/autorform.component';
 import { AutoresComponent } from './autores/autores.component';
 import { CategoriasformComponent } from './categoriasform/categoriasform.component';
 import { CategoriasComponent } from './categorias/categorias.component';
+import { UsuariosComponent } from './usuarios/usuarios.component';
+import { UsuariosformComponent } from './usuariosform/usuariosform.component';
 //import { EventosComponent } from './eventos/eventos.component';
 //import { AsistenteComponent } from './asistente/asistente.component';
 //import { AsistenteformComponent } from './asistenteform/asistenteform.component';
@@ -21,6 +23,10 @@ const routes: Routes = [
   { path: 'categorias', component: CategoriasComponent },
   { path: 'categoriasForm/:id', component: CategoriasformComponent },
   { path: 'categoriasForm', component: CategoriasformComponent },
+
+  { path: 'usuarios', component: UsuariosComponent },
+  { path: 'usuariosForm/:id', component: UsuariosformComponent },
+  { path: 'usuariosForm', component: UsuariosformComponent },
 
   { path: '', redirectTo: '/home', pathMatch: 'full' },
 ];

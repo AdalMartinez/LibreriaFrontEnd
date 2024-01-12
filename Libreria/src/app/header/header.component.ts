@@ -28,6 +28,14 @@ export class HeaderComponent {
     this.router.navigate(['/categoriasForm']);
   }
 
+  consultarUsuarios(){
+    this.router.navigate(['/usuarios']);
+  }
+
+  agregarUsuarios(){
+    this.router.navigate(['/usuariosForm']);
+  }
+
   prueba(){
     this.router.navigateByUrl('/autoresForm/'+3)
   }
