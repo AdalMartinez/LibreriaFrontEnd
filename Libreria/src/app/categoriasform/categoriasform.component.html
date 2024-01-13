@@ -6,7 +6,7 @@
         </div>
         <mat-form-field>
             <mat-label>Ingrese el nombre de la categoria</mat-label>
-            <input matInput placeholder="Nombre categoria" name="nombreCategoria" [(ngModel)]="categoria.nombreCategoria" required />
+            <input matInput minlength="5" maxlength="80" placeholder="Nombre categoria" name="nombreCategoria" [(ngModel)]="categoria.nombreCategoria" required />
             <mat-error>Debe ingresar un nombre</mat-error>
         </mat-form-field>
         <button mat-raised-button color="primary" (click)="registrarCategoria()"

@@ -16,7 +16,7 @@
         </mat-form-field>
         <mat-form-field>
             <mat-label>Ingrese el estado del prestamo</mat-label>
-            <input matInput placeholder="Estado prestamo" name="estadoPrestamo" [(ngModel)]="prestamo.estadoPrestamo" required />
+            <input matInput minlength="5" maxlength="15" placeholder="Estado prestamo" name="estadoPrestamo" [(ngModel)]="prestamo.estadoPrestamo" required />
             <mat-error>Debe ingresar un estado</mat-error>
         </mat-form-field>
 

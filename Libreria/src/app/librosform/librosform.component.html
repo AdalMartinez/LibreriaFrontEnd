@@ -6,7 +6,7 @@
         </div>
         <mat-form-field>
             <mat-label>Ingrese el titulo del libro</mat-label>
-            <input matInput placeholder="Titulo" name="tituloLibro" [(ngModel)]="libro.tituloLibro" required />
+            <input matInput minlength="5" maxlength="100" placeholder="Titulo" name="tituloLibro" [(ngModel)]="libro.tituloLibro" required />
             <mat-error>Debe ingresar un titulo</mat-error>
         </mat-form-field>
         <mat-form-field>
@@ -16,7 +16,7 @@
         </mat-form-field>
         <mat-form-field>
             <mat-label>Ingrese el editorial</mat-label>
-            <input matInput placeholder="Editorial" name="editorial" [(ngModel)]="libro.editorial" required />
+            <input matInput minlength="5" maxlength="50" placeholder="Editorial" name="editorial" [(ngModel)]="libro.editorial" required />
             <mat-error>Debe ingresar un editorial</mat-error>
         </mat-form-field>
 
