@@ -7,7 +7,7 @@
         <mat-form-field>
             <mat-label>Ingrese el titulo del libro</mat-label>
             <input matInput minlength="5" maxlength="100" placeholder="Titulo" name="tituloLibro" [(ngModel)]="libro.tituloLibro" required />
-            <mat-error>Debe ingresar un titulo</mat-error>
+            <mat-error>Debe ingresar un titulo de longitud 5 a 100</mat-error>
         </mat-form-field>
         <mat-form-field>
             <mat-label>Ingrese el año de publicacion</mat-label>
@@ -17,7 +17,7 @@
         <mat-form-field>
             <mat-label>Ingrese el editorial</mat-label>
             <input matInput minlength="5" maxlength="50" placeholder="Editorial" name="editorial" [(ngModel)]="libro.editorial" required />
-            <mat-error>Debe ingresar un editorial</mat-error>
+            <mat-error>Debe ingresar un editorial de longitud 5 a 50</mat-error>
         </mat-form-field>
 
         <mat-form-field>

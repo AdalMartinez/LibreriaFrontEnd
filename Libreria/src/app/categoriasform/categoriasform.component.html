@@ -7,7 +7,7 @@
         <mat-form-field>
             <mat-label>Ingrese el nombre de la categoria</mat-label>
             <input matInput minlength="5" maxlength="80" placeholder="Nombre categoria" name="nombreCategoria" [(ngModel)]="categoria.nombreCategoria" required />
-            <mat-error>Debe ingresar un nombre</mat-error>
+            <mat-error>Debe ingresar un nombre de longitud 5 a 80</mat-error>
         </mat-form-field>
         <button mat-raised-button color="primary" (click)="registrarCategoria()"
             *ngIf="!categoria.idCategoria; else elseBlock">Enviar</button>

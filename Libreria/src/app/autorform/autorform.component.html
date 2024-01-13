@@ -9,7 +9,7 @@
         <mat-form-field>
             <mat-label>Ingrese el nombre del autor</mat-label>
             <input matInput minlength="10" maxlength="80" placeholder="Nombre" name="nombreAutor" [(ngModel)]="autor.nombreAutor" required />
-            <mat-error>Debe ingresar un nombre</mat-error>
+            <mat-error>Debe ingresar un nombre de longitud 10 a 80</mat-error>
         </mat-form-field>
         <button mat-raised-button color="primary" (click)="registrarAutor()"
             *ngIf="!autor.idAutor; else elseBlock">Enviar</button>

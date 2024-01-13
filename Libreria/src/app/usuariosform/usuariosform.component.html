@@ -9,22 +9,22 @@
         <mat-form-field>
             <mat-label>Ingrese el nombre usuario</mat-label>
             <input matInput minlength="5" maxlength="80" placeholder="Nombre" name="nombreUsuario" [(ngModel)]="usuario.nombreUsuario" required />
-            <mat-error>Debe ingresar un nombre</mat-error>
+            <mat-error>Debe ingresar un nombre de longitud 5 a 80</mat-error>
         </mat-form-field>
         <mat-form-field>
             <mat-label>Ingrese la direccion</mat-label>
             <input matInput minlength="6" maxlength="250" placeholder="Direccion" name="direccion" [(ngModel)]="usuario.direccion" required />
-            <mat-error>Debe ingresar una direccion</mat-error>
+            <mat-error>Debe ingresar una direccion de longitud 6 a 250</mat-error>
         </mat-form-field>
         <mat-form-field>
             <mat-label>Ingrese el numero de telefono</mat-label>
             <input matInput minlength="10" maxlength="20" type="email" placeholder="Telefono" name="telefono" [(ngModel)]="usuario.telefono" required />
-            <mat-error>Debe ingresar un telefono</mat-error>
+            <mat-error>Debe ingresar un telefono de longitud 10 a 20</mat-error>
         </mat-form-field>
         <mat-form-field>
             <mat-label>Ingrese el correo</mat-label>
             <input matInput minlength="15" maxlength="200" placeholder="Correo" name="correo" [(ngModel)]="usuario.correo" required />
-            <mat-error>Debe ingresar un nombre</mat-error>
+            <mat-error>Debe ingresar un correo de longitud 15 a 200</mat-error>
         </mat-form-field>
         <button mat-raised-button color="primary" (click)="registrarUsuario()"
             *ngIf="!usuario.idUsuario; else elseBlock">Enviar</button>
