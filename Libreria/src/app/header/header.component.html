@@ -17,8 +17,8 @@
     </mat-menu>
     <button mat-button [matMenuTriggerFor]="libros">Libros</button>
     <mat-menu #libros="matMenu">
-        <button mat-menu-item>Item 1</button>
-        <button mat-menu-item>Item 2</button>
+        <button mat-menu-item (click)="consultarLibros()">Ver Libros</button>
+        <button mat-menu-item (click)="agregarLibros()">Agregar Libro</button>
     </mat-menu>
     <button mat-button [matMenuTriggerFor]="prestamos">Prestamos</button>
     <mat-menu #prestamos="matMenu">

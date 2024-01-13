@@ -7,6 +7,8 @@ import { CategoriasformComponent } from './categoriasform/categoriasform.compone
 import { CategoriasComponent } from './categorias/categorias.component';
 import { UsuariosComponent } from './usuarios/usuarios.component';
 import { UsuariosformComponent } from './usuariosform/usuariosform.component';
+import { LibrosComponent } from './libros/libros.component';
+import { LibrosformComponent } from './librosform/librosform.component';
 //import { EventosComponent } from './eventos/eventos.component';
 //import { AsistenteComponent } from './asistente/asistente.component';
 //import { AsistenteformComponent } from './asistenteform/asistenteform.component';
@@ -27,6 +29,10 @@ const routes: Routes = [
   { path: 'usuarios', component: UsuariosComponent },
   { path: 'usuariosForm/:id', component: UsuariosformComponent },
   { path: 'usuariosForm', component: UsuariosformComponent },
+
+  { path: 'libros', component: LibrosComponent },
+  { path: 'librosForm/:id', component: LibrosformComponent },
+  { path: 'librosForm', component: LibrosformComponent },
 
   { path: '', redirectTo: '/home', pathMatch: 'full' },
 ];

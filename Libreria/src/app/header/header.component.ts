@@ -36,6 +36,14 @@ export class HeaderComponent {
     this.router.navigate(['/usuariosForm']);
   }
 
+  consultarLibros(){
+    this.router.navigate(['/libros']);
+  }
+
+  agregarLibros(){
+    this.router.navigate(['/librosForm']);
+  }
+
   prueba(){
     this.router.navigateByUrl('/autoresForm/'+3)
   }

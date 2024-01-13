@@ -1,1 +1,61 @@
-<p>librosform works!</p>
+<section fxLayoutAlign="center">
+    <mat-card fxLayoutAling="center center" fxLayout="column" fxLayoutGap="10px">
+        <div class="five">
+            <h1>Formulario Libro
+            </h1>
+        </div>
+        <mat-form-field>
+            <mat-label>Ingrese el titulo del libro</mat-label>
+            <input matInput placeholder="Titulo" name="tituloLibro" [(ngModel)]="libro.tituloLibro" required />
+            <mat-error>Debe ingresar un titulo</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Ingrese el año de publicacion</mat-label>
+            <input matInput placeholder="Año" name="anoPublicacion" [(ngModel)]="libro.anoPublicacion" required />
+            <mat-error>Debe ingresar un año de publicacion</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Ingrese el editorial</mat-label>
+            <input matInput placeholder="Editorial" name="editorial" [(ngModel)]="libro.editorial" required />
+            <mat-error>Debe ingresar un editorial</mat-error>
+        </mat-form-field>
+
+        <mat-form-field>
+            <mat-label>Ingrese el numero de ejemplares disponibles</mat-label>
+            <input matInput placeholder="Ejemplares Disponibles" name="ejemplaresDisponibles"
+                [(ngModel)]="libro.ejemplaresDisponibles" required />
+            <mat-error>Debe ingresar los ejemplares Disponibles</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Ingrese el numero de ejemplares totales</mat-label>
+            <input matInput placeholder="Ejemplares Totales" name="totalEjemplares" [(ngModel)]="libro.totalEjemplares"
+                required />
+            <mat-error>Debe ingresar los ejemplares totales</mat-error>
+        </mat-form-field>
+        <div class="mb-3">
+            <label for="autores">Seleccione el autor</label>
+            <select class="form-control" [(ngModel)]="libro.idAutor" name="autores" required>
+                <option *ngFor="let ev of listaDeAutores" [ngValue]="ev">
+                    {{ ev.nombreAutor }}
+                </option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label for="categorias">Seleccione la categoria</label>
+            <select class="form-control" [(ngModel)]="libro.idCategoria" name="categorias" required>
+                <option *ngFor="let ev of listaDeCategorias" [ngValue]="ev">
+                    {{ ev.nombreCategoria }}
+                </option>
+            </select>
+        </div>
+
+        <button mat-raised-button color="primary" (click)="registrarLibro()"
+            *ngIf="!libro.idLibro; else elseBlock">Enviar</button>
+        <ng-template #elseBlock>
+            <button mat-raised-button color="primary" (click)="actualizarLibro()">
+                Actualizar Libro
+            </button>
+        </ng-template>
+
+    </mat-card>
+</section>

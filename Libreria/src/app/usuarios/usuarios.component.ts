@@ -24,7 +24,7 @@ export class UsuariosComponent {
   }
 
   actualizarUsuario(id: number): void{
-    this.router.navigateByUrl('/autoresForm/'+id);
+    this.router.navigateByUrl('/usuariosForm/'+id);
     
   }
 
