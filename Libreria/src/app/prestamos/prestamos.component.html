@@ -1,1 +1,48 @@
-<p>prestamos works!</p>
+<div class="mt-3"></div>
+<div class="container border-primary">
+  <div class="card text-center">
+    <div class="card-header text-primary text-center">
+      <h1 class="card-header">
+        {{ titulo }}
+      </h1>
+    </div>
+    <div class="card-body text-primary">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <td>Id</td>
+            <td>Fecha prestamo</td>
+            <td>Fecha devolucion prevista</td>
+            <td>Fecha devolucion real</td>
+            <td>Estado de prestamo</td>
+            <td>Titulo libro</td>
+            <td>Nombre de usuario</td>
+            <td>Eliminar Prestamo</td>
+            <td>Actualizar Prestamo</td>
+          </tr>
+        </thead>
+        <tbody>
+        @for(item of listaDePrestamos; track item.idPrestamo) {
+            <tr>
+                <td>{{item.idPrestamo}}</td>
+                <td>{{item.fechaPrestamo}}</td>
+                <td>{{item.fechaDevolucionPrevista.substring(0,10)}}</td>
+                <td>{{item.fechaDevolucionReal.substring(0,10)}}</td>
+                <td>{{item.estadoPrestamo}}</td>
+                <td>{{item.idLibro.tituloLibro}}</td>
+                <td>{{item.idUsuario.nombreUsuario}}</td>
+                <td>
+                  <a class="btn btn-outline-danger" (click)="deletePrestamo(item.idPrestamo)">
+                    Eliminar
+                  </a>
+                </td>
+                <td>
+                  <a class="btn btn-outline-success" (click)="actualizarPrestamo(item.idPrestamo)"> Actualizar </a>
+                </td>    
+            </tr>
+        }
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

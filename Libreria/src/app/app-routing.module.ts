@@ -9,6 +9,10 @@ import { UsuariosComponent } from './usuarios/usuarios.component';
 import { UsuariosformComponent } from './usuariosform/usuariosform.component';
 import { LibrosComponent } from './libros/libros.component';
 import { LibrosformComponent } from './librosform/librosform.component';
+import { PrestamosComponent } from './prestamos/prestamos.component';
+import { PrestamosformComponent } from './prestamosform/prestamosform.component';
+import { MultaComponent } from './multa/multa.component';
+import { MultasformComponent } from './multasform/multasform.component';
 //import { EventosComponent } from './eventos/eventos.component';
 //import { AsistenteComponent } from './asistente/asistente.component';
 //import { AsistenteformComponent } from './asistenteform/asistenteform.component';
@@ -33,6 +37,15 @@ const routes: Routes = [
   { path: 'libros', component: LibrosComponent },
   { path: 'librosForm/:id', component: LibrosformComponent },
   { path: 'librosForm', component: LibrosformComponent },
+
+  { path: 'prestamos', component: PrestamosComponent },
+  { path: 'prestamosForm/:id', component: PrestamosformComponent },
+  { path: 'prestamosForm', component: PrestamosformComponent },
+
+
+  { path: 'multas', component: MultaComponent },
+  { path: 'multasForm/:id', component: MultasformComponent },
+  { path: 'multasForm', component: MultasformComponent },
 
   { path: '', redirectTo: '/home', pathMatch: 'full' },
 ];

@@ -22,30 +22,34 @@
 
         <mat-form-field>
             <mat-label>Ingrese el numero de ejemplares disponibles</mat-label>
-            <input matInput placeholder="Ejemplares Disponibles" name="ejemplaresDisponibles"
+            <input matInput type="number" placeholder="Ejemplares Disponibles" name="ejemplaresDisponibles"
                 [(ngModel)]="libro.ejemplaresDisponibles" required />
             <mat-error>Debe ingresar los ejemplares Disponibles</mat-error>
         </mat-form-field>
         <mat-form-field>
             <mat-label>Ingrese el numero de ejemplares totales</mat-label>
-            <input matInput placeholder="Ejemplares Totales" name="totalEjemplares" [(ngModel)]="libro.totalEjemplares"
+            <input matInput type="number" placeholder="Ejemplares Totales" name="totalEjemplares" [(ngModel)]="libro.totalEjemplares"
                 required />
             <mat-error>Debe ingresar los ejemplares totales</mat-error>
         </mat-form-field>
         <div class="mb-3">
             <label for="autores">Seleccione el autor</label>
             <select class="form-control" [(ngModel)]="libro.idAutor" name="autores" required>
-                <option *ngFor="let ev of listaDeAutores" [ngValue]="ev">
-                    {{ ev.nombreAutor }}
-                </option>
+                @for(item of listaDeAutores; track item.idAutor) {
+                    <option [ngValue]="item" [selected]="item.nombreAutor === libro.idAutor.nombreAutor">
+                        {{ item.nombreAutor}}
+                    </option>
+                }
             </select>
         </div>
         <div class="mb-3">
             <label for="categorias">Seleccione la categoria</label>
             <select class="form-control" [(ngModel)]="libro.idCategoria" name="categorias" required>
-                <option *ngFor="let ev of listaDeCategorias" [ngValue]="ev">
-                    {{ ev.nombreCategoria }}
-                </option>
+                @for(item of listaDeCategorias; track item.idCategoria) {
+                    <option [ngValue]="item" [selected]="item.nombreCategoria === libro.idCategoria.nombreCategoria">
+                        {{ item.nombreCategoria}}
+                    </option>
+                }
             </select>
         </div>
 

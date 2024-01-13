@@ -22,12 +22,12 @@
     </mat-menu>
     <button mat-button [matMenuTriggerFor]="prestamos">Prestamos</button>
     <mat-menu #prestamos="matMenu">
-        <button mat-menu-item>Item 1</button>
-        <button mat-menu-item>Item 2</button>
+        <button mat-menu-item (click)="consultarPrestamos()">Ver Prestamos</button>
+        <button mat-menu-item (click)="agregarPrestamos()">Agregar Prestamo</button>
     </mat-menu>
     <button mat-button [matMenuTriggerFor]="multas">Multas</button>
     <mat-menu #multas="matMenu">
-        <button mat-menu-item>Item 1</button>
-        <button mat-menu-item>Item 2</button>
+        <button mat-menu-item (click)="consultarMultas()">Ver multas</button>
+        <button mat-menu-item (click)="agregarMulta()">Agregar multa</button>
     </mat-menu>
 </mat-toolbar>

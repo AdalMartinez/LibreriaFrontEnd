@@ -1,1 +1,39 @@
-<p>multasform works!</p>
+<section fxLayoutAlign="center">
+    <mat-card fxLayoutAling="center center" fxLayout="column" fxLayoutGap="10px">
+        <div class="five">
+            <h1>Formulario Multa
+            </h1>
+        </div>
+        <mat-form-field>
+            <mat-label>Ingrese el monto de la multa</mat-label>
+            <input matInput type="number" placeholder="Monto multa" name="montoMulta" [(ngModel)]="multa.montoMulta" required />
+            <mat-error>Debe ingresar el monto</mat-error>
+        </mat-form-field>
+
+        <mat-form-field>
+            <mat-label>Ingrese el estado del pago</mat-label>
+            <input matInput placeholder="Estado de pago" name="estadoDelPago" [(ngModel)]="multa.estadoDelPago" required />
+            <mat-error>Debe ingresar el estado del pago</mat-error>
+        </mat-form-field>
+
+        <div class="mb-3">
+            <label for="prestamos">Seleccione el id del prestamo</label>
+            <select class="form-control" [(ngModel)]="multa.idPrestamo" name="prestamos" required>
+                @for(item of lsitaDePrestamos; track item.idPrestamo) {
+                    <option [ngValue]="item" [selected]="item.idPrestamo === multa.idPrestamo.idPrestamo">
+                        {{ item.idPrestamo}}
+                    </option>
+                }
+            </select>
+        </div>
+
+        <button mat-raised-button color="primary" (click)="registrarMulta()"
+            *ngIf="!multa.idMulta; else elseBlock">Enviar</button>
+        <ng-template #elseBlock>
+            <button mat-raised-button color="primary" (click)="actualizarMulta()">
+                Actualizar Multa
+            </button>
+        </ng-template>
+
+    </mat-card>
+</section>

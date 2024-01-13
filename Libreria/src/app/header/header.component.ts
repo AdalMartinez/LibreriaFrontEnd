@@ -44,6 +44,22 @@ export class HeaderComponent {
     this.router.navigate(['/librosForm']);
   }
 
+  consultarPrestamos(){
+    this.router.navigate(['/prestamos']);
+  }
+
+  agregarPrestamos(){
+    this.router.navigate(['/prestamosForm']);
+  }
+
+  consultarMultas(){
+    this.router.navigate(['/multas']);
+  }
+
+  agregarMulta(){
+    this.router.navigate(['/multasForm']);
+  }
+
   prueba(){
     this.router.navigateByUrl('/autoresForm/'+3)
   }

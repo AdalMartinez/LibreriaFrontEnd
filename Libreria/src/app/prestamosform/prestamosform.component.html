@@ -1,1 +1,53 @@
-<p>prestamosform works!</p>
+<section fxLayoutAlign="center">
+    <mat-card fxLayoutAling="center center" fxLayout="column" fxLayoutGap="10px">
+        <div class="five">
+            <h1>Formulario Prestamo
+            </h1>
+        </div>
+        <mat-form-field>
+            <mat-label>Ingrese la fecha de devolucion prevista</mat-label>
+            <input matInput type="date" placeholder="Fecha prevista" name="fechaDevolucionPrevista" [(ngModel)]="prestamo.fechaDevolucionPrevista" required />
+            <mat-error>Debe ingresar una fecha</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Ingrese la fecha de devolucion real</mat-label>
+            <input matInput type="date" placeholder="Fecha real" name="fechaDevolucionReal" [(ngModel)]="prestamo.fechaDevolucionReal" required />
+            <mat-error>Debe ingresar una fecha</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Ingrese el estado del prestamo</mat-label>
+            <input matInput placeholder="Estado prestamo" name="estadoPrestamo" [(ngModel)]="prestamo.estadoPrestamo" required />
+            <mat-error>Debe ingresar un estado</mat-error>
+        </mat-form-field>
+
+        <div class="mb-3">
+            <label for="usuarios">Seleccione el usuario</label>
+            <select class="form-control" [(ngModel)]="prestamo.idUsuario" name="usuarios" required>
+                @for(item of listaDeUsuarios; track item.idUsuario) {
+                    <option [ngValue]="item" [selected]="item.nombreUsuario === prestamo.idUsuario.nombreUsuario">
+                        {{ item.nombreUsuario}}
+                    </option>
+                }
+            </select>
+        </div>
+        <div class="mb-3">
+            <label for="libros">Seleccione un libro</label>
+            <select class="form-control" [(ngModel)]="prestamo.idLibro" name="libros" required>
+                @for(item of listaDeLibros; track item.idLibro) {
+                    <option [ngValue]="item" [selected]="item.tituloLibro === prestamo.idLibro.tituloLibro">
+                        {{ item.tituloLibro}}
+                    </option>
+                }
+            </select>
+        </div>
+
+        <button mat-raised-button color="primary" (click)="registrarPrestamo()"
+            *ngIf="!prestamo.idPrestamo; else elseBlock">Enviar</button>
+        <ng-template #elseBlock>
+            <button mat-raised-button color="primary" (click)="actualizarPrestamo()">
+                Actualizar Prestamo
+            </button>
+        </ng-template>
+
+    </mat-card>
+</section>

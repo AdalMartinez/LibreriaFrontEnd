@@ -1,1 +1,50 @@
-<p>libros works!</p>
+<div class="mt-3"></div>
+<div class="container border-primary">
+  <div class="card text-center">
+    <div class="card-header text-primary text-center">
+      <h1 class="card-header">
+        {{ titulo }}
+      </h1>
+    </div>
+    <div class="card-body text-primary">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <td>Id</td>
+            <td>Titulo</td>
+            <td>Año de publicacion</td>
+            <td>Editorial</td>
+            <td>Ejemplares disponibles</td>
+            <td>Total de ejemplares</td>
+            <td>Nombre de autor</td>
+            <td>Nombre de categoria</td>
+            <td>Eliminar Libro</td>
+            <td>Actualizar Libro</td>
+          </tr>
+        </thead>
+        <tbody>
+        @for(item of listaDeLibros; track item.idLibro) {
+            <tr>
+                <td>{{item.idLibro}}</td>
+                <td>{{item.tituloLibro}}</td>
+                <td>{{item.anoPublicacion}}</td>
+                <td>{{item.editorial}}</td>
+                <td>{{item.ejemplaresDisponibles}}</td>
+                <td>{{item.totalEjemplares}}</td>
+                <td>{{item.idAutor.nombreAutor}}</td>
+                <td>{{item.idCategoria.nombreCategoria}}</td>
+                <td>
+                  <a class="btn btn-outline-danger" (click)="deleteLibro(item.idLibro)">
+                    Eliminar
+                  </a>
+                </td>
+                <td>
+                  <a class="btn btn-outline-success" (click)="actualizarLibro(item.idLibro)"> Actualizar </a>
+                </td>    
+            </tr>
+        }
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

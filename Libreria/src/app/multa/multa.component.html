@@ -1,1 +1,42 @@
-<p>multa works!</p>
+<div class="mt-3"></div>
+<div class="container border-primary">
+  <div class="card text-center">
+    <div class="card-header text-primary text-center">
+      <h1 class="card-header">
+        {{ titulo }}
+      </h1>
+    </div>
+    <div class="card-body text-primary">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <td>Id</td>
+            <td>Monto</td>
+            <td>Estado del pago</td>
+            <td>Fecha prestamo</td>
+            <td>Eliminar Multa</td>
+            <td>Actualizar Multa</td>
+          </tr>
+        </thead>
+        <tbody>
+        @for(item of listaDeMultas; track item.idMulta) {
+            <tr>
+                <td>{{item.idMulta}}</td>
+                <td>{{item.montoMulta}}</td>
+                <td>{{item.estadoDelPago}}</td>
+                <td>{{item.idPrestamo.fechaPrestamo}}</td>
+                <td>
+                  <a class="btn btn-outline-danger" (click)="deleteMulta(item.idMulta)">
+                    Eliminar
+                  </a>
+                </td>
+                <td>
+                  <a class="btn btn-outline-success" (click)="actualizarMulta(item.idMulta)"> Actualizar </a>
+                </td>    
+            </tr>
+        }
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

@@ -19,6 +19,7 @@ import {MatTableModule} from '@angular/material/table';
 import { LibrosformComponent } from './librosform/librosform.component';
 import { UsuariosformComponent } from './usuariosform/usuariosform.component';
 import { PrestamosformComponent } from './prestamosform/prestamosform.component';
+import { MultasformComponent } from './multasform/multasform.component';
 
 
 @NgModule({
@@ -32,6 +33,7 @@ import { PrestamosformComponent } from './prestamosform/prestamosform.component'
     LibrosformComponent,
     UsuariosformComponent,
     PrestamosformComponent,
+    MultasformComponent,
   //  EventosComponent,
   //  AsistenteComponent,
    // AsistenteformComponent,
