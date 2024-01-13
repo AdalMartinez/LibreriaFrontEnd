@@ -7,7 +7,6 @@ import { Router } from '@angular/router';
   styleUrl: './home.component.css'
 })
 export class HomeComponent {
-  title: string="Bienvenido "+ this.router.getCurrentNavigation().extractedUrl;
 
   constructor(
     private router: Router,
