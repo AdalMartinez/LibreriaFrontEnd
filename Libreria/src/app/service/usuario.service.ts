@@ -1,7 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { map, tap } from 'rxjs/operators';
 import { Usuario } from '../model/Usuario';
 
 @Injectable({
@@ -44,6 +44,15 @@ export class UsuarioService {
     return this.http.delete<Usuario>(`${this.urlEndPoint}/${id}`, {
       headers: this.httpHeaders,
     });
+  }
+
+  generarReportePDF(): Observable<Blob> {
+    const url = `${this.urlEndPoint}/pdf`;
+    return this.http
+      .get(url, { responseType: 'blob' })
+      .pipe(
+        tap(() => console.log('Reporte PDF generado')),
+      );
   }
 
 }

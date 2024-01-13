@@ -3,6 +3,7 @@ import { UsuarioService } from '../service/usuario.service';
 import { Usuario } from '../model/Usuario';
 import { Router } from '@angular/router';
 import Swal from 'sweetalert2';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-usuarios',
@@ -48,5 +49,16 @@ export class UsuariosComponent {
         window.location.reload();
       }
     }); 
+  }
+
+  descargarReporte(): void{
+    this.usuarioService.generarReportePDF().subscribe(
+      (reporteBlob: Blob) => {
+        const blobUrl = URL.createObjectURL(reporteBlob);
+        window.open(blobUrl, '_blank');
+      },
+      (error) => console.error('Error al generar el reporte PDF', error)
+    );
+    
   }
 }
