@@ -47,12 +47,19 @@ export class CategoriasformComponent implements OnInit{
       .actualizarCategoria(this.categoria)
       .subscribe((elAutor) => {
         this.router.navigate(['/categorias']);
+        Swal.fire(
+          'Actualizar Categoria',
+          `${this.categoria.nombreCategoria} Se ha actualizado correctamente.`,
+          'success'
+        );
+      }, (error) => {
+        Swal.fire({
+          icon: "error",
+          title: "No se pudo registrar",
+          text: "revise que cumpla los requisitos!",
+        });
       });
-    Swal.fire(
-      'Actualizar Categoria',
-      `${this.categoria.nombreCategoria} Se ha actualizado correctamente.`,
-      'success'
-    );
+    
   }
 
 }
