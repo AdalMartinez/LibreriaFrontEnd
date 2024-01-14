@@ -34,12 +34,19 @@ export class UsuariosformComponent {
       .crearUsuario(this.usuario)
       .subscribe((elAsistente) => {
         this.router.navigate(['/usuarios']);
+        Swal.fire(
+          'Usuario registrado',
+          `${this.usuario.nombreUsuario} Se ha registrado correctamente.`,
+          'success'
+        );
+      }, (error) => {
+        Swal.fire({
+          icon: "error",
+          title: "No se pudo registrar",
+          text: "revise que cumpla los requisitos!",
+        });
       });
-    Swal.fire(
-      'Usuario registrado',
-      `${this.usuario.nombreUsuario} Se ha registrado correctamente.`,
-      'success'
-    );
+    
   }
 
   actualizarUsuario(): void {
@@ -47,11 +54,18 @@ export class UsuariosformComponent {
       .actualizarUsuario(this.usuario)
       .subscribe((elAutor) => {
         this.router.navigate(['/usuarios']);
+        Swal.fire(
+          'Actualizar Usuario',
+          `${this.usuario.nombreUsuario} Se ha actualizado correctamente.`,
+          'success'
+        );
+      }, (error) => {
+        Swal.fire({
+          icon: "error",
+          title: "No se pudo registrar",
+          text: "revise que cumpla los requisitos!",
+        });
       });
-    Swal.fire(
-      'Actualizar Usuario',
-      `${this.usuario.nombreUsuario} Se ha actualizado correctamente.`,
-      'success'
-    );
+    
   }
 }

@@ -38,12 +38,20 @@ export class MultasformComponent implements OnInit{
       .crearMulta(this.multa)
       .subscribe((elAsistente) => {
         this.router.navigate(['/multas']);
+        Swal.fire(
+          'Multa registrado',
+          `${this.multa.montoMulta} Se ${this.multa.idMulta} ${this.multa.idPrestamo} ha registrado correctamente.`,
+          'success'
+        );
+
+      }, (error) => {
+        Swal.fire({
+          icon: "error",
+          title: "No se pudo registrar",
+          text: "revise que cumpla los requisitos!",
+        });
       });
-    Swal.fire(
-      'Multa registrado',
-      `${this.multa.montoMulta} Se ${this.multa.idMulta} ${this.multa.idPrestamo} ha registrado correctamente.`,
-      'success'
-    );
+   
   }
 
   actualizarMulta(): void {
@@ -51,11 +59,18 @@ export class MultasformComponent implements OnInit{
       .actualizarMulta(this.multa)
       .subscribe((elAutor) => {
         this.router.navigate(['/multas']);
+        Swal.fire(
+          'Actualizar Multa',
+          `${this.multa.montoMulta} Se ha actualizado correctamente.`,
+          'success'
+        );
+      }, (error) => {
+        Swal.fire({
+          icon: "error",
+          title: "No se pudo registrar",
+          text: "revise que cumpla los requisitos!",
+        });
       });
-    Swal.fire(
-      'Actualizar Multa',
-      `${this.multa.montoMulta} Se ha actualizado correctamente.`,
-      'success'
-    );
+   
   }
 }

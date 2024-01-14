@@ -45,12 +45,19 @@ export class PrestamosformComponent {
       .crearPrestamo(this.prestamo)
       .subscribe((elAsistente) => {
         this.router.navigate(['/prestamos']);
+        Swal.fire(
+          'Prestamo registrado',
+          `${this.prestamo.fechaPrestamo} Se ha registrado correctamente.`,
+          'success'
+        );
+      }, (error) => {
+        Swal.fire({
+          icon: "error",
+          title: "No se pudo registrar",
+          text: "revise que cumpla los requisitos!",
+        });
       });
-    Swal.fire(
-      'Prestamo registrado',
-      `${this.prestamo.fechaPrestamo} Se ha registrado correctamente.`,
-      'success'
-    );
+    
   }
 
   actualizarPrestamo(): void {
@@ -58,11 +65,18 @@ export class PrestamosformComponent {
       .actualizarPrestamo(this.prestamo)
       .subscribe((elAutor) => {
         this.router.navigate(['/prestamos']);
+        Swal.fire(
+          'Actualizar Prestamo',
+          `${this.prestamo.fechaPrestamo} Se ha actualizado correctamente.`,
+          'success'
+        );
+      }, (error) => {
+        Swal.fire({
+          icon: "error",
+          title: "No se pudo registrar",
+          text: "revise que cumpla los requisitos!",
+        });
       });
-    Swal.fire(
-      'Actualizar Prestamo',
-      `${this.prestamo.fechaPrestamo} Se ha actualizado correctamente.`,
-      'success'
-    );
+    
   }
 }

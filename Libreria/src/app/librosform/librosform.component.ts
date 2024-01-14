@@ -41,12 +41,19 @@ export class LibrosformComponent {
       .crearLibro(this.libro)
       .subscribe((elAsistente) => {
         this.router.navigate(['/libros']);
+        Swal.fire(
+          'Libro registrado',
+          `${this.libro.tituloLibro} Se ha registrado correctamente.`,
+          'success'
+        );
+      }, (error) => {
+        Swal.fire({
+          icon: "error",
+          title: "No se pudo registrar",
+          text: "revise que cumpla los requisitos!",
+        });
       });
-    Swal.fire(
-      'Libro registrado',
-      `${this.libro.tituloLibro} Se ha registrado correctamente.`,
-      'success'
-    );
+   
   }
 
   actualizarLibro(): void {
@@ -54,12 +61,19 @@ export class LibrosformComponent {
       .actualizarLibro(this.libro)
       .subscribe((elAutor) => {
         this.router.navigate(['/libros']);
+        Swal.fire(
+          'Actualizar Libro',
+          `${this.libro.tituloLibro} Se ha actualizado correctamente.`,
+          'success'
+        );
+      }, (error) => {
+        Swal.fire({
+          icon: "error",
+          title: "No se pudo registrar",
+          text: "revise que cumpla los requisitos!",
+        });
       });
-    Swal.fire(
-      'Actualizar Libro',
-      `${this.libro.tituloLibro} Se ha actualizado correctamente.`,
-      'success'
-    );
+    
   }
 
 }

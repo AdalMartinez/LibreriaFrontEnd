@@ -34,12 +34,19 @@ export class CategoriasformComponent implements OnInit{
       .crearCategoria(this.categoria)
       .subscribe((elAsistente) => {
         this.router.navigate(['/categorias']);
+        Swal.fire(
+          'Categoria registrado',
+          `${this.categoria.nombreCategoria} Se ha registrado correctamente.`,
+          'success'
+        );
+      }, (error) => {
+        Swal.fire({
+          icon: "error",
+          title: "No se pudo registrar",
+          text: "revise que cumpla los requisitos!",
+        });
       });
-    Swal.fire(
-      'Categoria registrado',
-      `${this.categoria.nombreCategoria} Se ha registrado correctamente.`,
-      'success'
-    );
+   
   }
 
   actualizarCategoria(): void {
@@ -47,12 +54,19 @@ export class CategoriasformComponent implements OnInit{
       .actualizarCategoria(this.categoria)
       .subscribe((elAutor) => {
         this.router.navigate(['/categorias']);
+        Swal.fire(
+          'Actualizar Categoria',
+          `${this.categoria.nombreCategoria} Se ha actualizado correctamente.`,
+          'success'
+        );
+      }, (error) => {
+        Swal.fire({
+          icon: "error",
+          title: "No se pudo registrar",
+          text: "revise que cumpla los requisitos!",
+        });
       });
-    Swal.fire(
-      'Actualizar Categoria',
-      `${this.categoria.nombreCategoria} Se ha actualizado correctamente.`,
-      'success'
-    );
+    
   }
 
 }
