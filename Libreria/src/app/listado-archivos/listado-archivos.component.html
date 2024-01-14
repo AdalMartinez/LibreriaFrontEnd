@@ -1,0 +1,38 @@
+<div class="mt-3">
+    <div class="container border-primary">
+        <div class="card text-center">
+            <div class="card-header text-primary text-center">
+                <h1 class="card-header">
+                    {{titulo}}
+                </h1>
+            </div>
+            <div class="card-body text-primary">
+                <div class="row">
+                    <div class = "col-9"></div>
+                    <div class="col-3">
+                    
+                      <a href="/guardarArchivo" class="btn btn-outline-primary"> Cargar Nuevo Archivo </a>
+                    </div>
+                  </div>
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <td>idArchivo</td>
+                            <td>nombreArchivo</td>
+                            <td>tipoArchivo</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let arch of listaDeArchivos">
+                            <td>{{arch.idArchivo}}</td>
+                            <td>{{arch.nombreArchivo}}</td>
+                            <td>{{arch.tipoArchivo}}</td>
+                            
+                            
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

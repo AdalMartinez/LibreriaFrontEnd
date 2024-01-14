@@ -21,6 +21,9 @@ import { UsuariosformComponent } from './usuariosform/usuariosform.component';
 import { PrestamosformComponent } from './prestamosform/prestamosform.component';
 import { MultasformComponent } from './multasform/multasform.component';
 
+import { CommonModule } from '@angular/common';
+import { ListadoArchivosComponent } from './listado-archivos/listado-archivos.component';
+
 
 @NgModule({
   declarations: [
@@ -34,6 +37,7 @@ import { MultasformComponent } from './multasform/multasform.component';
     UsuariosformComponent,
     PrestamosformComponent,
     MultasformComponent,
+    ListadoArchivosComponent
   //  EventosComponent,
   //  AsistenteComponent,
    // AsistenteformComponent,
@@ -47,6 +51,7 @@ import { MultasformComponent } from './multasform/multasform.component';
     MaterialModule,
     FlexLayoutModule,
     MatTableModule,
+    CommonModule
 ],
   providers: [],
   bootstrap: [AppComponent],

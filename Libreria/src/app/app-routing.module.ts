@@ -13,6 +13,8 @@ import { PrestamosComponent } from './prestamos/prestamos.component';
 import { PrestamosformComponent } from './prestamosform/prestamosform.component';
 import { MultaComponent } from './multa/multa.component';
 import { MultasformComponent } from './multasform/multasform.component';
+import { ListadoArchivosComponent } from './listado-archivos/listado-archivos.component';
+import { ArchivoFormComponent } from './archivo-form/archivo-form.component';
 //import { EventosComponent } from './eventos/eventos.component';
 //import { AsistenteComponent } from './asistente/asistente.component';
 //import { AsistenteformComponent } from './asistenteform/asistenteform.component';
@@ -46,6 +48,9 @@ const routes: Routes = [
   { path: 'multas', component: MultaComponent },
   { path: 'multasForm/:id', component: MultasformComponent },
   { path: 'multasForm', component: MultasformComponent },
+
+  { path: 'listadoArchivos', component: ListadoArchivosComponent},
+  {path: 'guardarArchivo', component: ArchivoFormComponent },
 
   { path: '', redirectTo: '/home', pathMatch: 'full' },
 ];

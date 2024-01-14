@@ -63,6 +63,10 @@ export class HeaderComponent {
   prueba(){
     this.router.navigateByUrl('/autoresForm/'+3)
   }
+
+  consultarArchivos(){
+    this.router.navigateByUrl('/listadoArchivos');
+  }
 }
 
 

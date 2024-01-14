@@ -1,0 +1,25 @@
+<div class="mt-3">
+    <div class="container">
+      <div class="card border-info mb-3">
+        <div class="card-header text-primary">
+          <h1 class="text-center">Carga un Nuevo Archivo</h1>
+        </div>
+        <div class="card-body text-primary table-responsive">
+          <form>
+            <!-- Otros campos del formulario si los tienes -->
+            <div class="mb-3">
+              <label for="archivo">Selecciona un archivo</label>
+              <input
+                type="file"
+                class="form-control"
+                name="archivo"
+                (change)="onFileSelected($event)"
+              />
+            </div>
+            <button type="button" class="btn btn-primary" (click)="guardarArchivo()">Guardar Archivo</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  

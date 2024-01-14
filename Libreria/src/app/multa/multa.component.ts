@@ -10,7 +10,7 @@ import { Multa } from '../model/Multa';
   styleUrl: './multa.component.css'
 })
 export class MultaComponent implements OnInit{
-  titulo: string = 'Listado de Mutlas';
+  titulo: string = 'Listado de Multas';
   listaDeMultas: Multa[] = [];
   constructor(
     private multaService: MultaService,

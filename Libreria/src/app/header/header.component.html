@@ -30,4 +30,10 @@
         <button mat-menu-item (click)="consultarMultas()">Ver multas</button>
         <button mat-menu-item (click)="agregarMulta()">Agregar multa</button>
     </mat-menu>
+
+    <button mat-button [matMenuTriggerFor]="archivos">Archivos</button>
+    <mat-menu #archivos="matMenu">
+        <button mat-menu-item (click)="consultarArchivos()">Ver Archivos</button>
+    </mat-menu>
+
 </mat-toolbar>
