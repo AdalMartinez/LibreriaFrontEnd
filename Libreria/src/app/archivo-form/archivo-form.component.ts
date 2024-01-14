@@ -38,12 +38,19 @@ export class ArchivoFormComponent implements OnInit{
       // Por ejemplo, llamando a archivoService.guardarArchivo(this.archivoSeleccionado);
       this.archivoService.guardarArchivo(this.archivoSeleccionado).subscribe((elArchivo) => {
         this.router.navigate(['/listadoArchivos']);
+        Swal.fire(
+          'Registrar Archivo',
+          `${this.archivo.nombreArchivo} Se ha registrado correctamente.`,
+          'success'
+        );
+      }, (error) => {
+        Swal.fire({
+          icon: "error",
+          title: "No se pudo registrar",
+          text: "revise que cumpla los requisitos!",
+        });
       });
-      Swal.fire(
-        'Registrar Archivo',
-        `${this.archivo.nombreArchivo} Se ha registrado correctamente.`,
-        'success'
-      );
+      
     }
   }
 
